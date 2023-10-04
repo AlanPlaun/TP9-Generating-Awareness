@@ -1,0 +1,93 @@
+.tercio{
+  display: inline-block;
+  width: 28%;
+  margin: 2%;
+  margin-top: 10%;
+}
+.title {
+  font-size: 20px; 
+  color: #333; 
+  margin-bottom: 20px; 
+  text-align: center;
+  
+}
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+body {
+  margin: 0;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url('./assets/Cambio_Climatico_746x419.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.imagenPNG{
+  height: 50%;
+  width: 50%;
+}
+.accordion-column {
+  float: left;
+  width: 50%; /* Ocupa el 50% del ancho de la pantalla */
+  padding: 20px; /* Espaciado opcional para separar el contenido del borde de la pantalla */
+  box-sizing: border-box; /* Incluye el relleno en el ancho total */
+  overflow-y: auto; /* Añade desplazamiento vertical si es necesario */
+}
+
+/* Estilo para la columna de la imagen (derecha) */
+.image-column {
+  float: left;
+  width: 50%; /* Ocupa el 50% del ancho de la pantalla */
+  padding: 20px; /* Espaciado opcional para separar el contenido del borde de la pantalla */
+  box-sizing: border-box; /* Incluye el relleno en el ancho total */
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente en la columna */
+  align-items: center; 
+}
+.accordion {
+  max-width: 100%;
+}
+p {
+
+  padding: 10px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif; 
+  font-size: 16px; 
+}
+.link{
+  color: white;
+  text-decoration: none;
+}
+.figure-container {
+  position: absolute;
+  top: 0;
+  left: 22%;
+}
+
