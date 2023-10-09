@@ -1,41 +1,35 @@
-import React from 'react';
-import BasicExample from './components/Card';
-import './App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import CardSolucionn from './components/CardSolucion';
-import Figure from 'react-bootstrap/Figure';
-import CardDonaciones from './components/CardDonaciones';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React from "react";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./components/Home";
+import Causas from "./components/Causas";
+import Soluciones from "./components/Soluciones";
+import Donaciones from "./components/Donaciones";
+import Login from "./components/Login";
+import UsuarioProvider from "./context/UserContext";
 
 function App() {
   return (
     <React.Fragment>
-
-      <div>
-        <div className='title'>
-          <h1 className="main-title">URBAN LUXURY</h1>
-          <h4 className="subtitle">Informate y ayuda a concientizar a otros</h4>
-          <div>
-            <Figure className="figure-container">
-              <Figure.Image
-                width={171}
-                height={130}
-                alt="171x180"
-                src="https://images.vexels.com/media/users/3/296107/isolated/preview/87d9abb704822675875639924f9ede52-personaje-de-dibujos-animados-del-calentamiento-global-del-d-a-de-la-tierra.png"
-              />
-            </Figure>
-          </div>
-        </div>
-        <div className="tercio" style={{ marginLeft: '2%' }}>
-          <BasicExample />
-        </div>
-        <div className="tercio">
-          <CardSolucionn />
-        </div>
-        <div className="tercio" style={{ marginRight: '2%' }}>
-          <CardDonaciones />
-        </div>
-      </div>
+      <UsuarioProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/" element={<Layout />}>
+              {" "}
+              {/* Esta siempre */}
+              <Route index element={<Home />}></Route> {/* Index */}
+              <Route path="/Causas" element={<Causas />}></Route>
+              <Route path="/Soluciones" element={<Soluciones />}></Route>
+              <Route path="/Donaciones" element={<Donaciones />}></Route>
+              <Route path="*" element={<h1>Not Found</h1>}></Route>
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </UsuarioProvider>
     </React.Fragment>
   );
 }

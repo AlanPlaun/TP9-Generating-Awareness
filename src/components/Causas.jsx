@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Image from 'react-bootstrap/Image';
-import Carousel from 'react-bootstrap/Carousel';
+// import Image from 'react-bootstrap/Image';
+// import Carousel from 'react-bootstrap/Carousel';
 import Accordion from 'react-bootstrap/Accordion';
 import './Soluciones.css'
 
