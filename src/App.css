@@ -1,39 +1,32 @@
-.tercio{
-  display: inline-block;
-  width: 28%;
-  margin: 2%;
-  margin-top: 10%;
-}
-.title {
-  font-size: 20px; 
-  color: #333; 
-  margin-bottom: 20px; 
+.App {
   text-align: center;
-  
 }
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+.title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  font-size: 90px;
 }
-body {
-  margin: 0;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-image: url('./assets/Cambio_Climatico_746x419.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+
+.content{
+  padding: 20px;
+}
+
+.carousel-image {
+  object-fit: cover;
+  height: 300px;
+  width: 100%;
 }
 
 .navbar {
@@ -49,45 +42,30 @@ body {
   margin: 10px;
 }
 
-.imagenPNG{
-  height: 50%;
-  width: 50%;
-}
-.accordion-column {
-  float: left;
-  width: 50%; /* Ocupa el 50% del ancho de la pantalla */
-  padding: 20px; /* Espaciado opcional para separar el contenido del borde de la pantalla */
-  box-sizing: border-box; /* Incluye el relleno en el ancho total */
-  overflow-y: auto; /* Añade desplazamiento vertical si es necesario */
+.picos{
+  text-align: left;
 }
 
-/* Estilo para la columna de la imagen (derecha) */
-.image-column {
-  float: left;
-  width: 50%; /* Ocupa el 50% del ancho de la pantalla */
-  padding: 20px; /* Espaciado opcional para separar el contenido del borde de la pantalla */
-  box-sizing: border-box; /* Incluye el relleno en el ancho total */
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
-  justify-content: center; /* Centra la imagen horizontalmente en la columna */
-  align-items: center; 
-}
-.accordion {
-  max-width: 100%;
-}
-p {
-
-  padding: 10px;
-  line-height: 1.5;
-  font-family: Arial, sans-serif; 
-  font-size: 16px; 
-}
-.link{
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
   color: white;
-  text-decoration: none;
-}
-.figure-container {
-  position: absolute;
-  top: 0;
-  left: 22%;
 }
 
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

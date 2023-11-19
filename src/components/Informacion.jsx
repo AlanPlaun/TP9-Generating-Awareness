@@ -1,14 +1,14 @@
 import React, { Fragment } from "react";
-import Carrousel from "./Carrousel";
+import Grafico from "./Grafico";
 
-const Home = () => {
+const Informacion = () => {
     return (
         <Fragment>
             <h1 className='title'>Eco News</h1>
-            <Carrousel/>
+            <Grafico/>
         </Fragment>
     )
 }
 
+export default Informacion;
 
-export default Home

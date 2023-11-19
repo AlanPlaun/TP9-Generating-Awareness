@@ -1,23 +1,45 @@
-import React from 'react';
-import { Link, Outlet} from "react-router-dom";
+import React from "react";
+import { Link, Outlet } from "react-router-dom";
+import { ContextUsuario } from "../context/ContextUsuario";
 
-const Layout = ()=>{
-    return(
-        <React.Fragment>
+
+const Layout = () => {
+    const {autenticado} = React.useContext(ContextUsuario);
+    if (autenticado === true)
+    {
+        return(
+            <React.Fragment>
             <div>
                 <nav className='navbar'>
-                    <Link to = {'/'} className='nav-link'>Home</Link>
-                    <Link to = {'/Causas'} className='nav-link'>Causas</Link>
-                    <Link to = {'/Soluciones'} className='nav-link'>Soluciones</Link>
-                    <Link to = {'/Donaciones'} className='nav-link'>Donaciones</Link>
-                    <Link to = {'/Login'} className='nav-link'>Login</Link>
+                    <Link to={'/perfil'} className='nav-link'><img src="/perfil.png" width={50} alt='Perfil'/></Link>
+                    <Link to={'/'} className='nav-link'><h3>Home</h3></Link>
+                    <Link to={'/informacion'} className='nav-link'><h3>+Info</h3></Link>
                 </nav>
             </div>
-            <div className= 'content'>
+            <div className='content'>
                 <Outlet/>
             </div>
         </React.Fragment>
-    )
+        )
+    }
+            
+    else {
+        return (
+        <React.Fragment>
+            <div>
+                <nav className='navbar'>
+                    <Link to={'/login'} className='nav-link'><img src="/perfil.png" width={50} alt='Login'/></Link>
+                    <Link to={'/'} className='nav-link'><h3>Home</h3></Link>
+                    <Link to={'/informacion'} className='nav-link'><h3>+Info</h3></Link>
+                </nav>
+            </div>
+            <div className='content'>
+                <Outlet/>
+            </div>
+        </React.Fragment>
+        )
+    }
+
 }
 
-export default Layout;
+export default Layout

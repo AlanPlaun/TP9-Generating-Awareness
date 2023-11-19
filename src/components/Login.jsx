@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ContextUsuario} from '../context/UserContext';
+import { ContextUsuario } from '../context/ContextUsuario';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
-  const {setUsuario, usuario} = React.useContext(ContextUsuario);
+  const { setUsuario, setAutenticado } = React.useContext(ContextUsuario);
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
@@ -19,9 +19,10 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUsuario({ username });
+    setUsuario(username );
+    localStorage.setItem('usuario', JSON.stringify( username  ))
+    setAutenticado(true);
     navigate('/');
-    console.log(usuario);
   };
 
   return (
@@ -51,8 +52,10 @@ function Login() {
           />
         </div>
         <div className="button-container">
-        <Link to="/" className="link"><button className='back'>Volver</button></Link>
-        <button type="submit">Iniciar sesión</button>
+          <Link to="/" className="link">
+            <button className='back'>Volver</button>
+          </Link>
+          <button type="submit">Iniciar sesión</button>
         </div>
       </form>
     </div>

@@ -1,16 +1,17 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Login from "./Components/Login";
-import './LoginDiseno.css';
+import LoginDiseño from "./LoginDiseño.css"
 import Layout from "./Components/Layout"
 
 const LoginPage = () => {
     return (
         
-        <React.Fragment>
+        <Fragment>
             <Layout />
             <Login />
-        </React.Fragment>
+        </Fragment>
     )
 }
 
 export default LoginPage;
+
